@@ -181,10 +181,11 @@ body {
     font-size: 0.95rem;
 }
 
-.header-btn:hover {
+.header-btn:hover, .header-btn.active {
     border-color: var(--border-color);
     background-color: var(--card-bg);
     box-shadow: 2px 2px 0 var(--shadow-color);
+    color: var(--accent-primary);
 }
 
 /* Typography */
