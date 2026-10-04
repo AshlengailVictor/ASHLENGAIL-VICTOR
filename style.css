@@ -529,3 +529,17 @@ input:checked + .slider:before {
     -o-transition: none !important;
     transition: none !important;
 }
+
+/* Resume and Scan Container */
+.resume-scan-container {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+@media (max-width: 900px) {
+    .resume-scan-container {
+        justify-content: center;
+    }
+}
