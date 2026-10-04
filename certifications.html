@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashlengail Victor - Portfolio</title>
+    <meta name="description" content="Portfolio of Ashlengail Victor, IT Professional & Front-End Developer.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .highlight-item {
+            transition: all 0.4s ease;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            border: 2px solid transparent;
+            scroll-margin-top: 40vh;
+        }
+        @keyframes fadeOutHighlight {
+            0%, 70% {
+                background-color: var(--accent-primary);
+                color: #fff;
+                border-color: var(--border-color);
+                box-shadow: 4px 4px 0 var(--border-color);
+                transform: translateX(10px);
+            }
+            100% {
+                background-color: transparent;
+                color: var(--text-color);
+                border-color: transparent;
+                box-shadow: none;
+                transform: translateX(0);
+            }
+        }
+        .highlight-item:target {
+            animation: fadeOutHighlight 3s ease forwards;
+        }
+        .cert-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Sticky Header -->
+    <nav class="sticky-header">
+        <div class="header-left">
+            <div class="header-logo" id="main-logo">
+                <svg viewBox="0 0 210 100" xmlns="http://www.w3.org/2000/svg" class="av-svg-logo-static">
+                    <path class="av-stroke-static" d="M 10,85 L 40,15" />
+                    <path class="av-stroke-static" d="M 40,15 L 70,85" />
+                    <circle class="av-stroke-static" cx="105" cy="50" r="25" />
+                    <path class="av-stroke-static" d="M 140,15 L 170,85" />
+                    <path class="av-stroke-static" d="M 170,85 L 200,15" />
+                    <path class="av-stroke-static" d="M 15,50 L 195,50" />
+                </svg>
+            </div>
+            <span class="header-name">Ashlengail Victor</span>
+        </div>
+        <div class="header-right">
+            <a href="index.html" class="header-btn">About Myself</a>
+            <a href="experience.html" class="header-btn">Experiences</a>
+            <a href="projects.html" class="header-btn">Projects</a>
+            <a href="artworks.html" class="header-btn">Artworks</a>
+            <a href="certifications.html" class="header-btn">Certificates</a>
+            <div class="theme-toggle">
+                <label class="switch" aria-label="Toggle Dark Mode">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+
+
+            <!-- Certifications Section -->
+            <section class="section" id="certifications">
+                <h3 class="page-title">Certificates</h3>
+                <div class="grid-2">
+                    <div class="card" style="padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <a href="#cert-1" class="cert-link"><img src="Sources/Certificates/Certificate_Ashlengail O. Victor (1).png" alt="Certificate 1" style="width: 100%; height: 100%; object-fit: contain;"></a>
+                    </div>
+                    <div class="card" style="padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <a href="#cert-2" class="cert-link"><img src="Sources/Certificates/EPCPS (13).png" alt="Certificate 2" style="width: 100%; height: 100%; object-fit: contain;"></a>
+                    </div>
+                    <div class="card" style="padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <a href="#cert-3" class="cert-link"><img src="Sources/Certificates/EPCPS (15).png" alt="Certificate 3" style="width: 100%; height: 100%; object-fit: contain;"></a>
+                    </div>
+                    <div class="card" style="padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <a href="#cert-4" class="cert-link"><img src="Sources/Certificates/EPCPS (48).png" alt="Certificate 4" style="width: 100%; height: 100%; object-fit: contain;"></a>
+                    </div>
+                    <div class="card" style="padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <a href="#cert-5" class="cert-link"><img src="Sources/Certificates/Victor, Ashlengail.png" alt="Certificate 5" style="width: 100%; height: 100%; object-fit: contain;"></a>
+                    </div>
+                    <div class="card" style="padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <a href="#cert-6" class="cert-link"><img src="Sources/Certificates/Victor.png" alt="Certificate 6" style="width: 100%; height: 100%; object-fit: contain;"></a>
+                    </div>
+                    <div class="card" style="padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <a href="#cert-7" class="cert-link"><img src="Sources/Certificates/Ashlengail-Victorashly-victor-gmail-com-503b7f41-6c57-4376-a026-6b9246fdc422.png" alt="Certificate 7" style="width: 100%; height: 100%; object-fit: contain;"></a>
+                    </div>
+                    <div class="card" style="padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <a href="#cert-8" class="cert-link"><img src="Sources/Certificates/CyberOps_Associate_certificate_ashly-victor-gmail-com_297b4968-ec1e-42fa-b7b0-2d2ecc651dc7.png" alt="Certificate 8" style="width: 100%; height: 100%; object-fit: contain;"></a>
+                    </div>
+                    <div class="card" style="padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <a href="#cert-9" class="cert-link"><img src="Sources/Certificates/Introduction_to_Cybersecurity_certificate_ashly-victor-gmail-com_d185c07d-f157-41c9-b729-1a3ff32c506c.png" alt="Certificate 9" style="width: 100%; height: 100%; object-fit: contain;"></a>
+                    </div>
+                </div>
+
+                <h3 class="page-title" style="margin-top: 4rem; font-size: 2rem;">Certificate Details & Seminar Takeaways</h3>
+                <div class="project-row" style="margin-top: 2rem;">
+                    <div class="project-text" style="width: 100%;">
+                        <ul class="styled-list" style="list-style: none; padding: 0;">
+                            <li id="cert-1" class="highlight-item"><strong>1. TESDA BSRS Creative Web Design:</strong> Validates foundational skills in front-end development, UI/UX principles, and responsive design methodologies.</li>
+                            <li id="cert-2" class="highlight-item"><strong>2. Cisco CCNA (Switching, Routing, and Wireless Essentials):</strong> Demonstrates knowledge of networking concepts, IP routing, switching, and configuring robust wireless network infrastructures.</li>
+                            <li id="cert-3" class="highlight-item"><strong>3. Cisco CyberOps Associate:</strong> Covers the tactical skills needed in a Security Operations Center (SOC) to actively monitor, detect, analyze, and respond to cybersecurity threats.</li>
+                            <li id="cert-4" class="highlight-item"><strong>4. AI Automation & Intelligent Chatbots:</strong> Certification in implementing modern AI tools, streamlining business workflows through smart automation, and building intelligent conversational agents.</li>
+                            <li id="cert-5" class="highlight-item"><strong>5. Seminar - Journal & Conference Proceeding Selection:</strong> Learned the rigorous process of finding legitimate academic publication outlets and the strict ethical standards required for research integrity and authorship.</li>
+                            <li id="cert-6" class="highlight-item"><strong>6. Seminar - Javascript Essentials (Build Interactive Websites):</strong> Explored core JavaScript concepts, including connecting to the Document Object Model (DOM), handling event listeners, and fetching API data.</li>
+                            <li id="cert-7" class="highlight-item"><strong>7. Seminar - SECURE BY INTELLIGENCE (AI IN CYBERSECURITY):</strong> Covered the intersection of AI and IoT devices, highlighting vulnerabilities in interconnected systems and presenting the "5 Pillars of Protection".</li>
+                            <li id="cert-8" class="highlight-item"><strong>8. Cisco CyberOps Associate (Advanced):</strong> Further validates skills in cybersecurity operations, threat analysis, and incident response within enterprise environments.</li>
+                            <li id="cert-9" class="highlight-item"><strong>9. Introduction to Cybersecurity:</strong> Foundational certification covering the basics of protecting networks, devices, and data from unauthorized access or criminal use.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Ashlengail Victor.</p>
+        </footer>
+    </div>
+    
+    <a href="#" id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    </a>
+    <script src="script.js"></script>
+</body>
+</html>
