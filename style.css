@@ -2,6 +2,7 @@
 :root {
     /* Colors */
     --bg-color: #ffe4e9; /* Light pink background */
+    --header-bg: #ffccd5; /* Slightly darker pink for header */
     --text-color: #1a1a1a;
     --accent-primary: #e63946; /* Red accent */
     --accent-secondary: #d81159; /* Deeper pink accent */
@@ -20,6 +21,7 @@
 [data-theme="dark"] {
     /* Colors */
     --bg-color: #0b0c10; /* Shade of black */
+    --header-bg: #000000; /* Pure black for darker header */
     --text-color: #f1f5f9;
     --accent-primary: #5eead4; /* Deep/bright teal */
     --accent-secondary: #7dd3fc; /* Light blue accent */
@@ -114,7 +116,7 @@ body {
 .sticky-header {
     position: sticky;
     top: 0;
-    background-color: var(--bg-color);
+    background-color: var(--header-bg);
     border-bottom: var(--border-width) solid var(--border-color);
     padding: 1rem 2rem;
     display: flex;
