@@ -540,6 +540,9 @@ input:checked + .slider:before {
 }
 @media (max-width: 900px) {
     .resume-scan-container {
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 }
