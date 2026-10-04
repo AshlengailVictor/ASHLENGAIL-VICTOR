@@ -479,3 +479,32 @@ input:checked + .slider:before {
         font-size: 1rem;
     }
 }
+
+/* Icon Navigation Styles */
+.nav-icon {
+    display: none;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+.nav-text {
+    display: inline;
+}
+
+@media (max-width: 900px) {
+    .nav-text {
+        display: none;
+    }
+    .nav-icon {
+        display: block;
+    }
+    .header-right {
+        gap: 1.2rem;
+        flex-wrap: nowrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .header-btn {
+        padding: 0.5rem;
+    }
+}
