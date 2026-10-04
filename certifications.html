@@ -23,16 +23,20 @@
         }
         @keyframes fadeOutHighlight {
             0%, 70% {
-                background-color: var(--accent-primary);
-                color: #fff;
-                border-color: var(--border-color);
-                box-shadow: 4px 4px 0 var(--border-color);
+                background-color: var(--card-bg);
+                color: var(--text-color);
+                border-left: 6px solid var(--accent-primary);
+                border-top: 2px solid var(--border-color);
+                border-right: 2px solid var(--border-color);
+                border-bottom: 2px solid var(--border-color);
+                box-shadow: 4px 4px 0 var(--shadow-color);
                 transform: translateX(10px);
             }
             100% {
                 background-color: transparent;
                 color: var(--text-color);
                 border-color: transparent;
+                border-left: 2px solid transparent;
                 box-shadow: none;
                 transform: translateX(0);
             }
