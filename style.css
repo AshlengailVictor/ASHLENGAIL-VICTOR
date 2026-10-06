@@ -544,37 +544,123 @@ input:checked + .slider:before {
     }
 }
 
- . p r o j e c t - t a b   { 
-         b a c k g r o u n d - c o l o r :   v a r ( - - b g - c o l o r ) ; 
-         c o l o r :   v a r ( - - t e x t - c o l o r ) ; 
-         b o r d e r :   2 p x   s o l i d   v a r ( - - b o r d e r - c o l o r ) ; 
-         b o x - s h a d o w :   4 p x   4 p x   0   v a r ( - - b o r d e r - c o l o r ) ; 
-         p a d d i n g :   0 . 7 5 r e m   1 . 5 r e m ; 
-         f o n t - s i z e :   1 r e m ; 
-         f o n t - w e i g h t :   b o l d ; 
-         b o r d e r - r a d i u s :   8 p x ; 
-         c u r s o r :   p o i n t e r ; 
-         t r a n s i t i o n :   a l l   0 . 2 s   e a s e ; 
-         f o n t - f a m i l y :   ' O u t f i t ' ,   s a n s - s e r i f ; 
- } 
- . p r o j e c t - t a b : h o v e r   { 
-         t r a n s f o r m :   t r a n s l a t e ( - 2 p x ,   - 2 p x ) ; 
-         b o x - s h a d o w :   6 p x   6 p x   0   v a r ( - - b o r d e r - c o l o r ) ; 
- } 
- . p r o j e c t - t a b . a c t i v e   { 
-         b a c k g r o u n d - c o l o r :   v a r ( - - a c c e n t - p r i m a r y ) ; 
-         c o l o r :   # f f f ; 
- } 
- . t a b - c o n t e n t   { 
-         d i s p l a y :   n o n e ; 
-         a n i m a t i o n :   f a d e I n   0 . 3 s   e a s e ; 
- } 
- . t a b - c o n t e n t . a c t i v e   { 
-         d i s p l a y :   b l o c k ; 
- } 
- @ k e y f r a m e s   f a d e I n   { 
-         f r o m   {   o p a c i t y :   0 ;   t r a n s f o r m :   t r a n s l a t e Y ( 1 0 p x ) ;   } 
-         t o   {   o p a c i t y :   1 ;   t r a n s f o r m :   t r a n s l a t e Y ( 0 ) ;   } 
- } 
-  
- 
+/* Gallery & Project Boxes */
+.gallery-container {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 0px;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+    background: var(--bg-color);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.gallery-container:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) 0 var(--shadow-color);
+}
+.gallery-container::-webkit-scrollbar {
+    height: 12px;
+}
+.gallery-container::-webkit-scrollbar-track {
+    background: var(--card-bg);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top: 2px solid var(--border-color);
+}
+.gallery-container::-webkit-scrollbar-thumb {
+    background-color: var(--accent-primary);
+    border-radius: 10px;
+    border: 3px solid var(--card-bg);
+}
+
+/* Lightbox Modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 20000; 
+    left: 0;
+    top: 0;
+    width: 100vw; 
+    height: 100vh; 
+    background-color: rgba(0,0,0,0.8); 
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+.modal-content-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    max-width: 90%;
+    max-height: 90vh;
+    padding: 1rem;
+    background: var(--bg-color);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: 8px 8px 0 var(--shadow-color);
+}
+.modal-content-container img {
+    height: 80vh;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 2px solid var(--border-color);
+}
+.modal-content-container .image-placeholder {
+    height: 80vh;
+    width: 60vw;
+    flex-shrink: 0;
+}
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.close-modal:hover {
+    color: var(--accent-primary);
+}
+.gallery-item {
+    height: 240px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-right: 2px solid var(--border-color);
+}
+.gallery-item:last-child {
+    border-right: none;
+}
+.modal-content-container .gallery-item {
+    height: 80vh !important;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+}
+@media (max-width: 768px) {
+    .modal-content-container img {
+        height: auto !important;
+        width: 85vw !important;
+        max-height: 80vh;
+    }
+    .modal-content-container .image-placeholder {
+        width: 85vw !important;
+        height: 60vh !important;
+    }
+    .gallery-item {
+        height: 200px !important;
+    }
+}

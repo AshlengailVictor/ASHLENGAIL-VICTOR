@@ -82,14 +82,29 @@ if (backToTop) {
     });
 }
 
-function switchProjectTab(tabId, btn) {
-    // Hide all tab contents
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    // Remove active class from all buttons
-    document.querySelectorAll('.project-tab').forEach(b => b.classList.remove('active'));
+function openGallery(element) {
+    const modal = document.getElementById('gallery-modal');
+    const modalContent = document.getElementById('modal-content-container');
+    if (!modal || !modalContent) return;
+
+    // Clone the inner HTML of the clicked gallery container
+    modalContent.innerHTML = element.innerHTML;
     
-    // Show selected tab content
-    document.getElementById(tabId).classList.add('active');
-    // Add active class to clicked button
-    btn.classList.add('active');
+    // Show modal
+    modal.classList.add('show');
 }
+
+function closeModal() {
+    const modal = document.getElementById('gallery-modal');
+    if (modal) {
+        modal.classList.remove('show');
+    }
+}
+
+// Close modal when clicking outside the content
+window.addEventListener('click', (e) => {
+    const modal = document.getElementById('gallery-modal');
+    if (e.target === modal) {
+        closeModal();
+    }
+});

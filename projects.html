@@ -57,18 +57,14 @@
                 <h3 class="page-title">Projects Portfolio</h3>
                 <p class="justified-text" style="text-align: center; max-width: 700px; margin: 0 auto 3rem auto;">Here is a showcase of my technical projects and UI/UX design wireframes.</p>
                 
-                <div class="tabs-container" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;">
-                    <button class="project-tab active" onclick="switchProjectTab('github-repos', this)">GitHub Repositories</button>
-                    <button class="project-tab" onclick="switchProjectTab('wireframes-tab', this)">UI/UX Wireframes</button>
-                </div>
 
-                <!-- GITHUB REPOSITORIES TAB -->
-                <div id="github-repos" class="tab-content active">
                 
                 <!-- Operix -->
                 <div class="project-row">
-                    <div class="project-image">
-                        <div class="image-placeholder">Operix Preview</div>
+                    <div class="project-image" style="background: transparent; border: none; box-shadow: none; padding: 0; min-width: 0;">
+                        <div class="gallery-container" onclick="openGallery(this)">
+                            <div class="image-placeholder gallery-item" style="width: 100%; border: none; box-shadow: none; border-radius: 0;">Operix Preview</div>
+                        </div>
                     </div>
                     <div class="project-text">
                         <h4>Operix</h4>
@@ -83,8 +79,10 @@
 
                 <!-- Splitzy -->
                 <div class="project-row reverse">
-                    <div class="project-image">
-                        <div class="image-placeholder">Splitzy App</div>
+                    <div class="project-image" style="background: transparent; border: none; box-shadow: none; padding: 0; min-width: 0;">
+                        <div class="gallery-container" onclick="openGallery(this)">
+                            <div class="image-placeholder gallery-item" style="width: 100%; border: none; box-shadow: none; border-radius: 0;">Splitzy App</div>
+                        </div>
                     </div>
                     <div class="project-text">
                         <h4>Splitzy Budget Tracker</h4>
@@ -99,8 +97,10 @@
 
                 <!-- SMART_PARK -->
                 <div class="project-row">
-                    <div class="project-image">
-                        <div class="image-placeholder">SMART_PARK</div>
+                    <div class="project-image" style="background: transparent; border: none; box-shadow: none; padding: 0; min-width: 0;">
+                        <div class="gallery-container" onclick="openGallery(this)">
+                            <div class="image-placeholder gallery-item" style="width: 100%; border: none; box-shadow: none; border-radius: 0;">SMART_PARK</div>
+                        </div>
                     </div>
                     <div class="project-text">
                         <h4>SMART_PARK</h4>
@@ -113,21 +113,17 @@
                     </div>
                 </div>
 
-                </div> <!-- END GITHUB REPOSITORIES TAB -->
-
-                <!-- WIREFRAMES TAB -->
-                <div id="wireframes-tab" class="tab-content">
-                    <!-- Wireframes -->
-                    <div class="project-row">
-                        <div class="project-image" style="background: transparent; border: none; box-shadow: none; padding: 0; min-width: 0;">
-                            <div style="display: flex; gap: 0; overflow-x: auto; padding-bottom: 0px; max-width: 100%; border-radius: 8px; border: 2px solid var(--border-color); box-shadow: 4px 4px 0 var(--border-color); background: var(--bg-color);">
-                                <img src="Sources/Projects/Wireframes/1.png" alt="Wireframe 1" style="height: 240px; width: auto; object-fit: contain; flex-shrink: 0; border-right: 2px solid var(--border-color);">
-                                <img src="Sources/Projects/Wireframes/2.png" alt="Wireframe 2" style="height: 240px; width: auto; object-fit: contain; flex-shrink: 0; border-right: 2px solid var(--border-color);">
-                                <img src="Sources/Projects/Wireframes/3.png" alt="Wireframe 3" style="height: 240px; width: auto; object-fit: contain; flex-shrink: 0; border-right: 2px solid var(--border-color);">
-                                <img src="Sources/Projects/Wireframes/4.png" alt="Wireframe 4" style="height: 240px; width: auto; object-fit: contain; flex-shrink: 0; border-right: 2px solid var(--border-color);">
-                                <img src="Sources/Projects/Wireframes/5.png" alt="Wireframe 5" style="height: 240px; width: auto; object-fit: contain; flex-shrink: 0; border-right: 2px solid var(--border-color);">
-                                <img src="Sources/Projects/Wireframes/6.png" alt="Wireframe 6" style="height: 240px; width: auto; object-fit: contain; flex-shrink: 0; border-right: 2px solid var(--border-color);">
-                                <img src="Sources/Projects/Wireframes/7.png" alt="Wireframe 7" style="height: 240px; width: auto; object-fit: contain; flex-shrink: 0;">
+                <!-- Wireframes -->
+                <div class="project-row reverse">
+                    <div class="project-image" style="background: transparent; border: none; box-shadow: none; padding: 0; min-width: 0;">
+                        <div class="gallery-container" onclick="openGallery(this)">
+                                <img src="Sources/Projects/Wireframes/1.png" alt="Wireframe 1" class="gallery-item">
+                                <img src="Sources/Projects/Wireframes/2.png" alt="Wireframe 2" class="gallery-item">
+                                <img src="Sources/Projects/Wireframes/3.png" alt="Wireframe 3" class="gallery-item">
+                                <img src="Sources/Projects/Wireframes/4.png" alt="Wireframe 4" class="gallery-item">
+                                <img src="Sources/Projects/Wireframes/5.png" alt="Wireframe 5" class="gallery-item">
+                                <img src="Sources/Projects/Wireframes/6.png" alt="Wireframe 6" class="gallery-item">
+                                <img src="Sources/Projects/Wireframes/7.png" alt="Wireframe 7" class="gallery-item">
                             </div>
                         </div>
                         <div class="project-text">
@@ -140,10 +136,15 @@
                             </ul>
                         </div>
                     </div>
-                </div> <!-- END WIREFRAMES TAB -->
-
             </section>
 
+            <!-- Lightbox Modal -->
+            <div id="gallery-modal" class="modal">
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+                <div class="modal-content-container" id="modal-content-container">
+                    <!-- Images will be injected here -->
+                </div>
+            </div>
 
         </main>
 
