@@ -81,3 +81,15 @@ if (backToTop) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+function switchProjectTab(tabId, btn) {
+    // Hide all tab contents
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    // Remove active class from all buttons
+    document.querySelectorAll('.project-tab').forEach(b => b.classList.remove('active'));
+    
+    // Show selected tab content
+    document.getElementById(tabId).classList.add('active');
+    // Add active class to clicked button
+    btn.classList.add('active');
+}
