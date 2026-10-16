@@ -108,3 +108,36 @@ window.addEventListener('click', (e) => {
         closeModal();
     }
 });
+
+// Copy Email to Clipboard helper
+function copyEmailToClipboard(email = 'Ashlengail.Victor25@gmail.com') {
+    navigator.clipboard.writeText(email).then(() => {
+        showToast('Email copied to clipboard! 📋✨');
+    }).catch(err => {
+        // Fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = email;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast('Email copied to clipboard! 📋✨');
+    });
+}
+
+function showToast(message) {
+    let toast = document.getElementById('toast-feedback');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast-feedback';
+        toast.className = 'toast-feedback';
+        document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.style.display = 'block';
+    
+    setTimeout(() => {
+        toast.style.display = 'none';
+    }, 2800);
+}
+
